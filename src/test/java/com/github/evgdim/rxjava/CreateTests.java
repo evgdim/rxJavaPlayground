@@ -29,7 +29,6 @@ public class CreateTests {
         Observable<Integer> first = Observable.from(Arrays.asList(1, 2, 3));
         Observable<Integer> second = Observable.from(Arrays.asList(4, 5, 6));
         Observable.merge(first, second)
-                .subscribeOn(Schedulers.computation())
                 .subscribe(i ->logger.info(String.valueOf(i)));
 
         try {
